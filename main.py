@@ -1,4 +1,4 @@
-from test_pruebas import *
+
 def hola():
     return "HELLO FASTAPI"
 

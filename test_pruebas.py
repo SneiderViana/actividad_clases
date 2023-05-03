@@ -1,3 +1,4 @@
+from main import *
 
 def test_Isprime():
     numero=cal.Primo(4)
