@@ -3,8 +3,16 @@ def hola():
     return "HELLO FASTAPI"
 
 def Primo(numero): 
-    return True
+     for n in range(2,numero):
+       if numero % n == 0:
+          return False  
+     return True
 
 def fibonnacci(num: int):
-    
-    return 2
+     a=0
+     b=1
+     for n in range(0, num):
+        c=a+b
+        a=b
+        b=c
+     return a
