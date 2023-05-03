@@ -8,6 +8,6 @@ def test_fibinnacci():
   numero=cal.fibonnacci(num)
   assert numero == 2
 
-def test_numero():
+def test_hola():
     saludo=cal.hello()
     assert  saludo== "HELLO FASTAPI"
