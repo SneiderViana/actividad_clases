@@ -1,14 +1,14 @@
-from main import *
+from main import * 
 
 def test_Isprime():
-    numero=cal.Primo(4)
+    numero=Primo(4)
     assert numero == False
 
 def test_fibinnacci():    
   num=3
-  numero=cal.fibonnacci(num)
+  numero=fibonnacci(num)
   assert numero == 2
 
 def test_hola():
-    saludo=cal.hello()
-    assert  saludo== "HELLO FASTAPI"
+    saludo=hello()
+    assert  saludo == "HELLO FASTAPI"
