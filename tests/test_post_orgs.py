@@ -42,3 +42,39 @@ def test_post_orgs(token, display_name, name, prueba, coderesponse):
     # Assert
     # check status code
     assert response.status_code == coderesponse
+
+@pytest.mark.parametrize("token, display_name, name, prueba, coderesponse",postORGS_CP13)
+def test_post_orgs_tokens(token, display_name, name, prueba, coderesponse):
+    #token="c3ac3cb4ff2631ddf05178923363b1f44825efe1"
+    # Act
+    response = requests.post(f'https://api.appcenter.ms/v0.1/orgs', headers={
+        "accept": "application/json",
+        "Content-Type": "application/json"
+       
+    },json={
+        "display_name": display_name,
+        "name": name
+    })
+    resp_data = json.loads(response.content)
+
+    # Assert
+    # check status code
+    assert response.status_code == 401
+
+@pytest.mark.parametrize("token, display_name, name, prueba, coderesponse",postORGS_CP13)
+def test_post_orgs_error(token, display_name, name, prueba, coderesponse):
+    #token="c3ac3cb4ff2631ddf05178923363b1f44825efe1"
+    # Act
+    response = requests.post(f'https://api.appcenter.ms/v0.1/orgs', headers={
+        "accept": "application/json",
+        "Content-Type": "application/json",
+        "X-API-Token": token
+    },json={
+        "display_name": display_name,
+        "nombre": name
+    })
+    resp_data = json.loads(response.content)
+
+    # Assert
+    # check status code
+    assert response.status_code == 400
