@@ -19,14 +19,14 @@ except Exception as ex:
     print(ex)
 
 cursor=connection.cursor()
-sql="""SELECT `token`, `id`, `display_name`, `email`, `name`, `avatar_url`, `can_change_password`, `created_at`, `origin`, `coderesponse`,`prueba` FROM GET_USERS WHERE CODERESPONSE='200' """
+sql="""SELECT `token`, `id`, `display_name`, `email`, `name`, `avatar_url`, `can_change_password`, `created_at`, `origin`, `coderesponse`,`prueba` FROM `get_users` WHERE CODERESPONSE='200' """
 cursor.execute(sql)
 resultados=[]
 for fila in cursor:
  resultados.append(fila)
 
 cursor=connection.cursor()
-sql="""SELECT `token`, `id`, `display_name`, `email`, `name`, `avatar_url`, `can_change_password`, `created_at`, `origin`, `coderesponse`,`prueba` FROM GET_USERS WHERE prueba='token_incorrecto' """
+sql="""SELECT `token`, `id`, `display_name`, `email`, `name`, `avatar_url`, `can_change_password`, `created_at`, `origin`, `coderesponse`,`prueba` FROM `get_users`  WHERE prueba='token_incorrecto' """
 cursor.execute(sql)
 resultados_tokenIncorrecto=[]
 for fila in cursor:
