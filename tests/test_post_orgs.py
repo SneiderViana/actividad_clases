@@ -5,10 +5,10 @@ import mysql.connector
 
 try:
     connection=mysql.connector.connect(
-        host='localhost',
+       host='database',
         port=3306,
-        user='root',
-        password="",
+        user='admin',
+        password="admin",
         database='dbtesttdd'
     )
     if connection.is_connected():
