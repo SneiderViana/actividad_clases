@@ -1,3 +1,3 @@
 @REM
 
-pytest -v
+pytest --html=report.html
